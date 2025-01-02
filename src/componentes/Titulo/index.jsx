@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Titulo = styled.h2`
     color: #7878e6;
     font-size: 32px;
-    text-align: ${props => props.$alinhamento ? props.$alinhamento : "left"}
+    text-align: ${props => props.$alinhamento ? props.$alinhamento : "left"};
 `;
 
 export default Titulo;

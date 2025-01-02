@@ -1,0 +1,82 @@
+[
+  {
+    "titulo": "Grande Nuvem de Magalhães",
+    "fonte": "Alura Space",
+    "path": "/imagens/galeria/foto-1.png",
+    "id": "1",
+    "tagId": 2,
+    "alt": "Uma vasta extensão da Via Láctea, com tons de azul e rosa, adorna o céu noturno."
+  },
+  {
+    "titulo": "Via Láctea",
+    "fonte": "Alura Space",
+    "path": "/imagens/galeria/foto-2.png",
+    "id": "2",
+    "tagId": 2,
+    "alt": "Uma jornada cósmica pela Via Láctea, revelando a beleza de nuvens de gás e poeira em tons vibrantes de rosa e azul."
+  },
+  {
+    "titulo": "Lua: quarto minguante",
+    "fonte": "Alura Space",
+    "path": "/imagens/galeria/foto-3.png",
+    "id": "3",
+    "tagId": 3,
+    "alt": "A lua crescente, iluminada pela luz do sol, se destaca contra o céu noturno."
+  },
+  {
+    "titulo": "Galáxia de Andrómeda",
+    "fonte": "Alura Space",
+    "path": "/imagens/galeria/foto-4.png",
+    "id": "4",
+    "tagId": 2,
+    "alt": "Dominando o centro do quadro, a galáxia se estende em um disco luminoso, com braços espirais proeminentes que se curvam elegantemente para fora."
+  },
+  {
+    "titulo": "Estrela Pistola",
+    "fonte": "Alura Space",
+    "path": "/imagens/galeria/foto-5.png",
+    "id": "5",
+    "tagId": 1,
+    "alt": "Nebulosa de emissão em formato esférico, brilhando intensamente em tons de vermelho vivo contra um fundo de um céu noturno repleto de estrelas."
+  },
+  {
+    "titulo": "Ilustração",
+    "fonte": "Alura Space",
+    "path": "/imagens/galeria/foto-6.png",
+    "id": "6",
+    "tagId": 4,
+    "alt": "A imagem captura a beleza majestosa da Via Láctea, nossa galáxia, estendendo-se em um arco brilhante e poeirento através de um céu noturno repleto de estrelas."
+  },
+  {
+    "titulo": "Galáxia de Andrómeda",
+    "fonte": "Alura Space",
+    "path": "/imagens/galeria/foto-7.png",
+    "id": "7",
+    "tagId": 2,
+    "alt": "Dominando o centro do quadro, a galáxia se estende em um disco luminoso, com braços espirais proeminentes que se curvam elegantemente para fora."
+  },
+  {
+    "titulo": "Ilustração",
+    "fonte": "Alura Space",
+    "path": "/imagens/galeria/foto-8.png",
+    "id": "8",
+    "tagId": 4,
+    "alt": "A imagem captura a Via Láctea, estendendo-se em um arco brilhante e poeirento através de um céu noturno repleto de estrelas."
+  },
+  {
+    "titulo": "Céu estrelado",
+    "fonte": "Alura Space",
+    "path": "/imagens/galeria/foto-9.png",
+    "id": "9",
+    "tagId": 1,
+    "alt": "A imagem mostra um céu noturno repleto de estrelas. Um fundo escuro e aveludado serve como pano de fundo para um espetáculo celestial de milhares de pontos luminosos de diversos tamanhos e intensidades."
+  },
+  {
+    "titulo": "Ilustração",
+    "fonte": "Alura Space",
+    "path": "/imagens/galeria/foto-10.png",
+    "id": "10",
+    "tagId": 1,
+    "alt": "A imagem apresenta um fundo escuro e estrelado, com um ponto de luz central branco e brilhante. Ao redor desse ponto central, há uma aura de luz que se expande em direção às bordas da imagem, criando um efeito de explosão ou irradiação. As estrelas no fundo parecem menores e mais distantes, contrastando com a intensidade da luz central."
+  }
+]
