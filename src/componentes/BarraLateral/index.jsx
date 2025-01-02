@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import ItemNavegacao from "./ItemNavegacao";
+import { useMenu  } from "../../hooks/useMenu";
 
 const BarraLateralEstilizada = styled.aside`
-    width: 212px;
+    width: 212px;    
 `;
 
 const ListaEstilizada = styled.ul`
@@ -12,13 +13,16 @@ const ListaEstilizada = styled.ul`
     width: 212px;
 `;
 
-const BarraLateral = ({ itens }) => {
+const BarraLateral = () => {
+
+    const { menuLateralItens } = useMenu();
+
     return(
         <BarraLateralEstilizada>
             <nav>
                 <ListaEstilizada>
                     {
-                        itens.map((item) => (
+                        menuLateralItens.map((item) => (
                             <ItemNavegacao 
                                 key={item.id}
                                 iconeAtivo={item.iconeAtivo}
