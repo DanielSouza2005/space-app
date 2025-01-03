@@ -33,12 +33,15 @@ const Tag = styled.button`
     }
 `;
 
-const Tags = () => {
+const Tags = ({ aoFiltrarPorTag }) => {
     return (
         <TagsContainer>
             <TagTitulo>Busque por tags:</TagTitulo>
             {tags.map(tag => (
-                <Tag key={tag.id}>
+                <Tag 
+                    key={tag.id}
+                    onClick={() => aoFiltrarPorTag(tag.id)}    
+                >
                     {tag.titulo}
                 </Tag>
             ))}

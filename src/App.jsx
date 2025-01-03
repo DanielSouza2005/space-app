@@ -1,14 +1,18 @@
 import styled from "styled-components";
+import { useState } from "react";
+
 import EstilosGlobais from "./componentes/EstilosGlobais";
 import Cabecalho from "./componentes/Cabecalho";
 import BarraLateral from "./componentes/BarraLateral";
 import Banner from "./componentes/Banner";
 import Galeria from "./componentes/Galeria";
+import ModalZoom from "./componentes/ModalZoom";
 
 import bannerBackground from "./assets/banner.png";
-import fotos from "./data/fotos.json";
-import { useState } from "react";
-import ModalZoom from "./componentes/ModalZoom";
+import fotoGaleria from "./data/fotosGaleria.json";
+import fotoPopular from "./data/fotosPopulares.json";
+import Rodape from "./componentes/Rodape";
+import Tags from "./componentes/Galeria/Tags";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(174.61deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
@@ -34,8 +38,29 @@ const ConteudoGaleria = styled.div`
 `;
 
 function App() {
-  const [fotosGaleria, setFotosGaleria] = useState(fotos);
+  const [fotosGaleria, setFotosGaleria] = useState(fotoGaleria);
   const [fotoSelecionada, setFotoSelecionada] = useState(null);
+  const [fotosPopulares] = useState(fotoPopular);
+
+  const aoFavoritar = (foto) => {
+    setFotosGaleria(fotosGaleria.map(fotoGaleria => {
+      if (fotoGaleria.id === foto.id) {
+        fotoGaleria.favorita = !fotoGaleria.favorita;
+      }
+
+      return fotoGaleria;
+    }));
+  };
+
+  const aoBuscarFotoPorTag = (tag) => {
+    if (tag === 0) {
+      setFotosGaleria(fotoGaleria);
+    }
+    else {
+      const fotosFiltradas = fotoGaleria.filter((fotoGaleria) => fotoGaleria.tagId === tag);
+      setFotosGaleria(fotosFiltradas);
+    }
+  };
 
   return (
     <FundoGradiente>
@@ -54,18 +79,26 @@ function App() {
               texto={"A galeria mais completa de fotos do espaço!"}
             />
 
+            <Tags
+              aoFiltrarPorTag={aoBuscarFotoPorTag}
+            />
+
             <Galeria
-              fotos={fotosGaleria}
+              fotosGaleria={fotosGaleria}
+              fotosPopulares={fotosPopulares}
               aoSelecionarFoto={foto => setFotoSelecionada(foto)}
+              aoFavoritar={aoFavoritar}
             />
           </ConteudoGaleria>
         </MainContainer>
-
       </AppContainer>
 
+      <Rodape />
+
       <ModalZoom
-        foto={fotoSelecionada}  
-        aoFechar={() => setFotoSelecionada(null)}      
+        foto={fotoSelecionada}
+        aoFavoritar={aoFavoritar}
+        aoFechar={() => setFotoSelecionada(null)}
       />
     </FundoGradiente>
   );

@@ -1,0 +1,43 @@
+[
+    {
+      "titulo": "Nuvem Appa",
+      "fonte": "Alura Space",
+      "path": "/imagens/populares/foto-1.png",
+      "id": "1",
+      "tagId": 2,
+      "alt": "Nuvem solitária em um céu noturno estrelado, com tons azuis e brancos predominantes."
+    },
+    {
+      "titulo": "Via Láctea",
+      "fonte": "Alura Space",
+      "path": "/imagens/populares/foto-2.png",
+      "id": "2",
+      "tagId": 2,
+      "alt": " Fotografia de alta resolução da Via Láctea, revelando um mar de estrelas e nuvens de gás cósmico em tons de roxo e azul."
+    },
+    {
+      "titulo": "Lua crescente",
+      "fonte": "Alura Space",
+      "path": "/imagens/populares/foto-3.png",
+      "id": "3",
+      "tagId": 3,
+      "alt": "Lua crescente em um céu noturno escuro, iluminada pela luz solar refletida."
+    },
+    {
+      "titulo": "Via Láctea vista pelo Deserto do Saara",
+      "fonte": "Alura Space",
+      "path": "/imagens/populares/foto-4.png",
+      "id": "4",
+      "tagId": 2,
+      "alt": "Paisagem desértica noturna com dunas de areia avermelhadas sob um céu estrelado, com a Via Láctea visível no horizonte."
+    },
+    {
+      "titulo": "Meteoros na Via Láctea",
+      "fonte": "Alura Space",
+      "path": "/imagens/populares/foto-5.png",
+      "id": "5",
+      "tagId": 1,
+      "alt": "Céu noturno estrelado com um meteoro brilhante cruzando a Via Láctea, com silhuetas de árvores na parte inferior da imagem."
+    }
+  ]
+  

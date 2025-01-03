@@ -43,7 +43,7 @@ const BtnFecharEstilizado = styled(IoCloseOutline)`
     color: #FFFFFF;
 `;
 
-const ModalZoom = ({ foto, aoFechar }) => {
+const ModalZoom = ({ foto, aoFechar, aoFavoritar }) => {
     return (
         <>
             {
@@ -51,7 +51,11 @@ const ModalZoom = ({ foto, aoFechar }) => {
                 <>
                     <OverLay />
                     <DialogEstilizado open={!!foto} onClose={aoFechar}>
-                        <Imagem foto={foto} expandida={true} />
+                        <Imagem
+                            foto={foto}
+                            expandida={true}
+                            aoFavoritar={aoFavoritar}
+                        />
                         <form method="dialog">
                             <button>
                                 <BtnFecharEstilizado

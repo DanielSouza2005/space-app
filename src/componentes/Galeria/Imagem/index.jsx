@@ -2,10 +2,12 @@ import styled from "styled-components";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { RiExpandDiagonalLine } from "react-icons/ri";
 
+import tags from "../Tags/tags.json";
+
 const FigureEstilizada = styled.figure`
     margin: 0;
     position: relative;
-    width: ${(props) => (props.$expandida ? '90%' : '97%')};
+    width: ${(props) => (props.$expandida ? '90%' : '98%')};
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -52,8 +54,9 @@ const HeaderEstilizado = styled.header`
 const FooterEstilizado = styled.footer`
     display: flex;
     align-items: center;
-    margin: 1.25rem;
+    margin: 1rem;
     justify-content: space-between;
+    gap: 10px;
 
     svg {
         cursor: pointer;
@@ -61,17 +64,40 @@ const FooterEstilizado = styled.footer`
     }
 `;
 
+const TagEstilizada = styled.div`
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-family: 'GandhiSansBold';
+`;
+
 const IconProps = {
     size: 26,
     color: "#FFFFFF"
 };
 
-const Imagem = ({ foto, expandida = false, aoSolicitarZoom }) => {
+const Imagem = ({ foto, expandida = false, aoSolicitarZoom, aoFavoritar }) => {
+
+    const tagAtual = tags.find((tag) => tag.id === foto.tagId)?.titulo || null;
+
     return (
         <FigureEstilizada
             $expandida={expandida}
             id={`foto-${foto.id}`}
         >
+            {
+                (!expandida && tagAtual) &&
+                <TagEstilizada>
+                    {tagAtual}
+                </TagEstilizada>
+            }
+
             <ImagemEstilizada
                 src={foto.path}
                 alt={foto.alt}
@@ -83,10 +109,21 @@ const Imagem = ({ foto, expandida = false, aoSolicitarZoom }) => {
                     <h4>{foto.fonte}</h4>
                 </HeaderEstilizado>
                 <FooterEstilizado>
-                    <FaRegHeart
-                        {...IconProps}
-                        alt="Icone de favorito"
-                    />
+                    {
+                        foto.favorita ?
+                            <FaHeart
+                                {...IconProps}
+                                alt="Icone de favorito"
+                                onClick={() => aoFavoritar(foto)}
+                            />
+                            :
+                            <FaRegHeart
+                                {...IconProps}
+                                alt="Icone de favorito"
+                                onClick={() => aoFavoritar(foto)}
+                            />
+                    }
+
                     {
                         !expandida &&
                         <RiExpandDiagonalLine
