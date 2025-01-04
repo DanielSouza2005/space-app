@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import EstilosGlobais from "./componentes/EstilosGlobais";
 import Cabecalho from "./componentes/Cabecalho";
@@ -21,8 +21,8 @@ const FundoGradiente = styled.div`
 `;
 
 const AppContainer = styled.div`
-  width: 1440px;
-  max-width: 100%;
+  width: 100%; 
+  max-width: 1440px;
   margin: 0 auto;
 `;
 
@@ -40,7 +40,10 @@ const ConteudoGaleria = styled.div`
 function App() {
   const [fotosGaleria, setFotosGaleria] = useState(fotoGaleria);
   const [fotoSelecionada, setFotoSelecionada] = useState(null);
-  const [fotosPopulares] = useState(fotoPopular);
+  const [fotosPopulares, setFotosPopulares] = useState(fotoPopular);
+
+  const [pesquisa, setPesquisa] = useState("");
+  const [tagSelecionada, setTagSelecionada] = useState(0);
 
   const aoFavoritar = (foto) => {
     setFotosGaleria(fotosGaleria.map(fotoGaleria => {
@@ -53,14 +56,23 @@ function App() {
   };
 
   const aoBuscarFotoPorTag = (tag) => {
-    if (tag === 0) {
-      setFotosGaleria(fotoGaleria);
-    }
-    else {
-      const fotosFiltradas = fotoGaleria.filter((fotoGaleria) => fotoGaleria.tagId === tag);
-      setFotosGaleria(fotosFiltradas);
-    }
+    setTagSelecionada(tag);
   };
+
+  const aoPesquisarFotos = (valor) => {
+    setPesquisa(String(valor));
+  }
+
+  useEffect(() => {
+    const fotosFiltradas = fotoGaleria.filter((fotoGaleria) => {
+      const filtroTag = tagSelecionada === 0 || fotoGaleria.tagId === tagSelecionada;
+      const filtroPesquisa = fotoGaleria.titulo.toLowerCase().includes(pesquisa.toLowerCase());
+
+      return filtroTag && filtroPesquisa;
+    })
+
+    setFotosGaleria(fotosFiltradas);
+  }, [pesquisa, tagSelecionada]);
 
   return (
     <FundoGradiente>
@@ -68,7 +80,9 @@ function App() {
 
         <EstilosGlobais />
 
-        <Cabecalho />
+        <Cabecalho
+          aoPesquisar={aoPesquisarFotos}
+        />
 
         <MainContainer>
           <BarraLateral />

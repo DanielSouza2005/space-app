@@ -48,6 +48,7 @@ const HeaderEstilizado = styled.header`
         font-size: 16px;
         margin: .2rem 0 1rem 0;  
         flex-grow: 1;
+        font-family: 'GandhiSansRegular';
     }
 `;
 

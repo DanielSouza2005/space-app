@@ -11,7 +11,7 @@ const HeaderEstilizado = styled.header`
     }
 `;
 
-const Cabecalho = () => {
+const Cabecalho = ({ aoPesquisar }) => {
     return(
         <HeaderEstilizado>
             <img 
@@ -19,7 +19,10 @@ const Cabecalho = () => {
                 alt="Teste"
             />
 
-            <InputTexto type="text"/>
+            <InputTexto 
+                aoAlterar={(valor) => aoPesquisar(valor)}
+                type="text"
+            />
         </HeaderEstilizado>
     );
 }

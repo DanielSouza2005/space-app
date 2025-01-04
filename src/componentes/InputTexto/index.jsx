@@ -36,10 +36,19 @@ const CiSearchEstilizado = styled(CiSearch)`
     right: 18px;
 `;
 
-const InputTexto = (props) => {
+const InputTexto = ({ type="text", aoAlterar }) => {
+
+    const aoDigitar = (evento) => {
+        aoAlterar(String(evento.target.value));
+    }
+
     return (
         <ContainerEstilizado>
-            <CampoTextoEstilizado placeholder="O que você procura?" {...props} />
+            <CampoTextoEstilizado 
+                placeholder="O que você procura?"
+                type={type} 
+                onChange={aoDigitar}
+            />
             <CiSearchEstilizado alt="Ícone de Lupa"/>
         </ContainerEstilizado>
     );

@@ -3,7 +3,8 @@ import ItemNavegacao from "./ItemNavegacao";
 import { useMenu  } from "../../hooks/useMenu";
 
 const BarraLateralEstilizada = styled.aside`
-    width: 212px;    
+    flex: 0 0 250px;   
+    max-width: 100%;
 `;
 
 const ListaEstilizada = styled.ul`
