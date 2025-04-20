@@ -7,7 +7,7 @@
 <h2>🖥️ Tecnologias Utilizadas</h2> 
 <div align="left" dir="auto"> 
   <a href="https://skillicons.dev" rel="nofollow"> 
-    <img src="https://skillicons.dev/icons?i=html,css,js,react" style="max-width: 100%;">
+    <img src="https://skillicons.dev/icons?i=html,css,js,react,styledcomponents" style="max-width: 100%;">
   </a> 
   <br> 
 </div> 
